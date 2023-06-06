@@ -1,0 +1,183 @@
+/*sets the font family, background color, and centers the content on the page.*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 130%;
+}
+
+/*sets the background color, padding, border radius, and box shadow of the container that holds the task list. It also centers the container on the page.*/
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0.3);
+  width: 520px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+/*sets the height, border, border radius, font size, and padding of the text input field.*/
+input[type="text"] {
+  height: 40px;
+   box-sizing: border-box;
+   border: 2px solid #0095ff;
+   border-radius: 5px;
+   font-size: 130%;
+   padding: 10px;
+   width: 100%;
+ }
+
+/*centers the heading text and adds a margin at the bottom.*/
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/*centers the heading text and adds a margin at the bottom.*/
+input {
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 130%;
+  padding: 13px;
+}
+
+/*sets the width, font size, padding, border radius, background color, and color of the buttons.*/
+button {
+  width: 100%;
+  font-size: 18.2px;
+  padding: 6.5px 13px;
+  border-radius: 26px;
+  background-color: #0095ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/*sets the list style type, padding, overflow, and maximum height of the unordered list that displays the tasks.*/
+ul {
+  list-style-type: none;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 390px;
+}
+
+/*sets the background color, padding, margin, padding right, display, and position of each list item. 
+  It also centers the content and adds a delete button to the right.*/
+li {
+  background-color: #f4f4f4;
+  padding: 13px;
+  margin-bottom: 6.5px;
+  padding-right: 117px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/*sets the text decoration of completed tasks to line-through.*/
+li.completed {
+  text-decoration: line-through;
+}
+
+li.completed .task-text {
+  text-decoration: line-through;
+}
+
+/*sets the flex-grow property of the task text to 1.*/
+.task-text {
+  flex-grow: 1;
+}
+
+/*sets the background color, color, border, cursor, font size, width, height, border radius, padding, margin, position, and right of the delete button.*/
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 15.6px;
+  width: 104px;
+  height: 39px;
+  border-radius: 26px;
+  padding: 6.5px 13px;
+  margin-left: 13px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid transparent;
+}
+
+/*hides the checkmark button.*/
+.checkmark-btn {
+  display: none;
+}
+
+/*sets the display, justify-content, align-items, width, height, margin-right, and cursor of the checkbox.*/
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 39px;
+  height: 39px;
+  margin-right: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/*hides the checkbox input.*/
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/*sets the display, width, height, background color, border, border radius, cursor, and position of the checkbox label.*/
+.checkbox label {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+/*sets the content, display, position, top, left, transform, font size, color, and opacity of the checkmark.*/
+.checkbox label::after {
+  content: "X";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  color: #206c13;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/*Sets the opacity of the checkmark to 1 when the checkbox input is checked.*/
+.checkbox input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+/*sets the background color, color, border, cursor, font size, width, height, border radius, and padding of the clear all button.*/
+#clearAll {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 15.6px;
+  width: 104px;
+  height: 39px;
+  border-radius: 26px;
+  padding: 6.5px 13px;
+  margin-top: 13px;
+}
